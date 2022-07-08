@@ -1,9 +1,12 @@
 const express = require('express');
-// const chalk = require('chalk');
+const chalk = require('chalk');
 
 const app = express();
 
 const port = process.env.PORT || 8080;
 
-// app.listen(port, () => console.log(`${chalk.cyan('Server run on port ')} ${port}`));
-app.listen(port, () => console.log(`Server run on port ${port}`));
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
+app.listen(port, () => console.log(`${chalk.green('Server run on port ')}${chalk.bgCyan(' ', port, ' ')}`));
