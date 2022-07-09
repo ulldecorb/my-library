@@ -5,7 +5,13 @@ function bookRouter() {
   const routes = Router();
 
   routes('/')
-    .get(bookController.getAll);
+    .get(bookController.getAll)
+    .post(bookController.createOne);
+
+  routes('/:bookID')
+    .delete(bookController.deleteById)
+    .get(bookController.getById)
+    .put(bookController.updateById);
 
   return routes;
 }
