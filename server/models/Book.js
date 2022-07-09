@@ -22,12 +22,21 @@ const BookSchema = new mongoose.Schema({
     type: Number
   },
   ranking: {
-    type: Number
+    type: Number,
+    default: 0
   },
   complete: {
-    trype: Boolean
+    type: Boolean,
+    default: false
   },
   category: {
+    type: String,
+    default: 'sin clasificar'
+  },
+  remark: {
+    type: String
+  },
+  review: {
     type: String
   }
 
