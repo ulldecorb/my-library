@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Book } from '../book';
+import './gallery.css';
 
 export function Gallery({ library }) {
   return (
     <section className="gallery">
-      <h1 className="title">Library</h1>
       {!library ? <h2>Loading...</h2>
         : library.map((book) => (
           <Book book={book} key={`gallery-${book.title}`} />

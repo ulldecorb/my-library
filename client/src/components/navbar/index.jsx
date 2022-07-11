@@ -3,9 +3,10 @@ import './navbar.css';
 
 export function NavBar() {
   return (
-    <navbar className="navbar">
+    <nav className="navbar">
       <h1>My Library</h1>
-    </navbar>
+      <h2>Add Book</h2>
+    </nav>
   );
 }
 
