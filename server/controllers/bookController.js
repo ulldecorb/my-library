@@ -4,7 +4,6 @@ function bookController() {
   async function getAll(req, res) {
     const book = await Book.find();
     res.json(book);
-    console.log(book);
   }
 
   async function createOne(req, res) {
