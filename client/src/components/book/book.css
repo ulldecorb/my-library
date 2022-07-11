@@ -1,0 +1,12 @@
+.book {
+  outline: 2px solid red;
+  min-width: 400px;
+  width: 33vw;
+  margin: 3vw 3vw;
+  padding: 2vmin;
+}
+
+.book__title {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=book.css.map */

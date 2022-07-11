@@ -1,0 +1,11 @@
+.book {
+    outline: 2px solid red;
+    min-width: 400px;
+    width: 33vw;
+    margin: 3vw 3vw;
+    padding: 2vmin;
+
+    &__title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Book } from '../book';
 
 export function Gallery({ library }) {
   return (
@@ -7,9 +8,7 @@ export function Gallery({ library }) {
       <h1 className="title">Library</h1>
       {!library ? <h2>Loading...</h2>
         : library.map((book) => (
-          <article className="book" key={`gallery${book.title}`}>
-            <h2 className="title">{book.title}</h2>
-          </article>
+          <Book book={book} key={`gallery-${book.title}`} />
         ))}
     </section>
   );
