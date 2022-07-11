@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { NavBar } from './components/navbar';
+import { NavBar } from './components/navbar';
 import { Gallery } from './components/gallery';
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <NavBar /> */}
+      <NavBar />
       <Gallery library={library} />
     </div>
   );
