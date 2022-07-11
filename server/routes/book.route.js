@@ -5,15 +5,15 @@ function bookRouter() {
   const routes = Router();
 
   routes
-    .route('/')
+    .route('/api')
     .get(bookController.getAll)
     .post(bookController.createOne);
 
-  routes
-    .route('/:bookID')
-    .delete(bookController.deleteById)
-    .get(bookController.getById)
-    .put(bookController.updateById);
+  // routes
+  //   .route('/api/:bookID')
+  //   .delete(bookController.deleteById)
+  //   .get(bookController.getById)
+  //   .put(bookController.updateById);
 
   return routes;
 }
