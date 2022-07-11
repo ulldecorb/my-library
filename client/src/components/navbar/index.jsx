@@ -5,6 +5,7 @@ export function NavBar() {
   return (
     <nav className="navbar">
       <h1>My Library</h1>
+      <h2>Add Book</h2>
     </nav>
   );
 }
