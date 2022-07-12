@@ -41,14 +41,14 @@ export function Book({ book }) {
         {book.company}
       </h3>
       <h3 className="book_author">
-        Año:
+        Year:
         {' '}
         {book.year}
       </h3>
       <h3 className="book_author">
-        Colección:
+        Collection:
         {' '}
-        {book.coection}
+        {book.colection}
       </h3>
       <h3 className="book_author">
         Ranking:
@@ -75,7 +75,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     company: PropTypes.string,
-    coection: PropTypes.string,
+    colection: PropTypes.string,
     year: PropTypes.number,
     price: PropTypes.number,
     ranking: PropTypes.number,

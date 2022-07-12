@@ -20,7 +20,7 @@ Gallery.propTypes = {
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
       company: PropTypes.string,
-      coection: PropTypes.string,
+      colection: PropTypes.string,
       year: PropTypes.number,
       price: PropTypes.number,
       ranking: PropTypes.number,
