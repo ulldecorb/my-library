@@ -9,9 +9,9 @@ export function AddBook() {
   const [category, setCategory] = useState('');
   const [remark, setRemark] = useState('');
   const [review, setReview] = useState('');
-  const [year, setYear] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [ranking, setRanking] = useState(0);
+  const [year, setYear] = useState(null);
+  const [price, setPrice] = useState(null);
+  const [ranking, setRanking] = useState(null);
   const [complete, setComplete] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -115,13 +115,20 @@ export function AddBook() {
         <label htmlFor="category">
           Category:
           {' '}
-          <input
+          {/* <input
             id="category"
             type="text"
             value={category}
             placeholder="Categoria"
             onChange={(e) => setCategory(e.target.value)}
-          />
+          /> */}
+          <select name="" id="category">
+            <option value="American superheroes">American superheroes</option>
+            <option value="American independent">American independent</option>
+            <option value="Manga">Manga</option>
+            <option value="European">European</option>
+            <option value="No Category">No Category</option>
+          </select>
         </label>
 
         <label htmlFor="year">
@@ -176,9 +183,15 @@ export function AddBook() {
         <label htmlFor="remark">
           Remark:
           {' '}
-          <input
+          {/* <input
             id="remark"
             type="text"
+            value={remark}
+            placeholder="Comentarios"
+            onChange={(e) => setRemark(e.target.value)}
+          /> */}
+          <textarea
+            id="remark"
             value={remark}
             placeholder="Comentarios"
             onChange={(e) => setRemark(e.target.value)}
@@ -188,14 +201,12 @@ export function AddBook() {
         <label htmlFor="review">
           Review:
           {' '}
-          <input
+          <textarea
             id="review"
-            type="text"
             value={review}
             placeholder="Reseña"
             onChange={(e) => setReview(e.target.value)}
           />
-
         </label>
 
         <button type="submit">Create</button>
