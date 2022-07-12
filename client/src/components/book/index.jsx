@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './book.css';
-import { Link } from 'react-router-dom';
 
-export function Book({ book }) {
+export function Book({ book, index }) {
   const handleDeleteBook = async (e) => {
     e.preventDefault();
     try {
@@ -22,20 +22,21 @@ export function Book({ book }) {
       console.log(err);
     }
   };
+  console.log('item: ', index);
 
   return (
-    <article className="book">
+    <li className="book">
+      <h2>{index + 1}</h2>
       <h2 className="book__title">
-        Title:
-        {' '}
         {book.title}
       </h2>
       <h3 className="book_author">
-        Author:
-        {' '}
         {book.author}
       </h3>
       <h3 className="book_author">
+        {book.ranking}
+      </h3>
+      {/* <h3 className="book_author">
         Editorial:
         {' '}
         {book.company}
@@ -51,21 +52,16 @@ export function Book({ book }) {
         {book.colection}
       </h3>
       <h3 className="book_author">
-        Ranking:
-        {' '}
-        {book.ranking}
-      </h3>
-      <h3 className="book_author">
         {book.price}
       </h3>
       <h3 className="book_author">
         Collection
         {' '}
         {book.complete ? 'complete' : 'incomplete'}
-      </h3>
-      <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
+      </h3> */}
       <Link to="/update">Update</Link>
-    </article>
+      <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
+    </li>
   );
 }
 
@@ -83,7 +79,8 @@ Book.propTypes = {
     category: PropTypes.string,
     remark: PropTypes.string,
     review: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default Book;

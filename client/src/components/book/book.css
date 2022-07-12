@@ -1,12 +1,14 @@
 .book {
   outline: 2px solid red;
-  min-width: 400px;
-  width: 33vw;
-  margin: 3vw 3vw;
-  padding: 2vmin;
-}
-
-.book__title {
-  font-size: 1.5rem;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: decimal;
 }
 /*# sourceMappingURL=book.css.map */

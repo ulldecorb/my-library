@@ -1,10 +1,13 @@
-navbar {
+.navbar {
     height: 100px;
     width: 100vw;
-    color: white;
+    color: red;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #aaa;
-    text-align: center;
+    outline: 5px solid #000;
+    // text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
