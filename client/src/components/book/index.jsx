@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './book.css';
+import { Link } from 'react-router-dom';
 
 export function Book({ book }) {
   const handleDeleteBook = async (e) => {
@@ -63,6 +64,7 @@ export function Book({ book }) {
         {book.complete ? 'complete' : 'incomplete'}
       </h3>
       <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
+      <Link to="/update">Update</Link>
     </article>
   );
 }

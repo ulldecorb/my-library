@@ -9,9 +9,9 @@ export function AddBook() {
   const [category, setCategory] = useState('');
   const [remark, setRemark] = useState('');
   const [review, setReview] = useState('');
-  const [year, setYear] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [ranking, setRanking] = useState(0);
+  const [year, setYear] = useState(null);
+  const [price, setPrice] = useState(null);
+  const [ranking, setRanking] = useState(null);
   const [complete, setComplete] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -64,73 +64,150 @@ export function AddBook() {
     <div className="add-form">
       <h3 className="add-form__title">Add New Book</h3>
       <form onSubmit={handleSubmit} className="add-form__form">
-        <input
-          type="text"
-          value={title}
-          placeholder="Título"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          value={author}
-          placeholder="Autor"
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        <input
-          type="text"
-          value={company}
-          placeholder="Editorial"
-          onChange={(e) => setCompany(e.target.value)}
-        />
-        <input
-          type="text"
-          value={coection}
-          placeholder="Colección"
-          onChange={(e) => setCoection(e.target.value)}
-        />
-        <input
-          type="text"
-          value={category}
-          placeholder="Categoria"
-          onChange={(e) => setCategory(e.target.value)}
-        />
-        <input
-          type="text"
-          value={remark}
-          placeholder="Comentarios"
-          onChange={(e) => setRemark(e.target.value)}
-        />
-        <input
-          type="text"
-          value={review}
-          placeholder="Reseña"
-          onChange={(e) => setReview(e.target.value)}
-        />
-        <input
-          type="number"
-          value={year}
-          placeholder="Año"
-          onChange={(e) => setYear(e.target.value)}
-        />
-        <input
-          type="number"
-          value={price}
-          placeholder="Reseña"
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <input
-          type="number"
-          value={ranking}
-          min="0"
-          max="5"
-          placeholder="ranking"
-          onChange={(e) => setRanking(e.target.value)}
-        />
-        <input
-          type="checkbox"
-          value={complete}
-          onChange={() => setComplete(!complete)}
-        />
+        <label htmlFor="title">
+          Title:
+          {' '}
+          <input
+            id="title"
+            type="text"
+            value={title}
+            placeholder="Título"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="author">
+          Author:
+          {' '}
+          <input
+            id="author"
+            type="text"
+            value={author}
+            placeholder="Autor"
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="company">
+          Editorial:
+          {' '}
+          <input
+            id="company"
+            type="text"
+            value={company}
+            placeholder="Editorial"
+            onChange={(e) => setCompany(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="collection">
+          Collection:
+          {' '}
+          <input
+            id="collection"
+            type="text"
+            value={coection}
+            placeholder="Colección"
+            onChange={(e) => setCoection(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="category">
+          Category:
+          {' '}
+          {/* <input
+            id="category"
+            type="text"
+            value={category}
+            placeholder="Categoria"
+            onChange={(e) => setCategory(e.target.value)}
+          /> */}
+          <select name="" id="category">
+            <option value="American superheroes">American superheroes</option>
+            <option value="American independent">American independent</option>
+            <option value="Manga">Manga</option>
+            <option value="European">European</option>
+            <option value="No Category">No Category</option>
+          </select>
+        </label>
+
+        <label htmlFor="year">
+          Year:
+          {' '}
+          <input
+            id="year"
+            type="number"
+            value={year}
+            placeholder="Año"
+            onChange={(e) => setYear(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="price">
+          Price:
+          {' '}
+          <input
+            id="price"
+            type="number"
+            value={price}
+            placeholder="Reseña"
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="ranking">
+          Ranking:
+          {' '}
+          <input
+            id="ranking"
+            type="number"
+            value={ranking}
+            min="0"
+            max="5"
+            placeholder="ranking"
+            onChange={(e) => setRanking(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="complete">
+          Completed:
+          {' '}
+          <input
+            id="complete"
+            type="checkbox"
+            value={complete}
+            onChange={() => setComplete(!complete)}
+          />
+        </label>
+
+        <label htmlFor="remark">
+          Remark:
+          {' '}
+          {/* <input
+            id="remark"
+            type="text"
+            value={remark}
+            placeholder="Comentarios"
+            onChange={(e) => setRemark(e.target.value)}
+          /> */}
+          <textarea
+            id="remark"
+            value={remark}
+            placeholder="Comentarios"
+            onChange={(e) => setRemark(e.target.value)}
+          />
+        </label>
+
+        <label htmlFor="review">
+          Review:
+          {' '}
+          <textarea
+            id="review"
+            value={review}
+            placeholder="Reseña"
+            onChange={(e) => setReview(e.target.value)}
+          />
+        </label>
 
         <button type="submit">Create</button>
 
