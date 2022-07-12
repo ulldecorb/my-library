@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 import { NavBar } from './components/navbar';
 import { Gallery } from './components/gallery';
 import { AddBook } from './components/addBook';
@@ -14,11 +19,25 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <NavBar />
-      <AddBook />
-      <Gallery library={library} />
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Gallery library={library} />
+              }
+          />
+          <Route
+            path="/addbook"
+            element={
+              <AddBook />
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
