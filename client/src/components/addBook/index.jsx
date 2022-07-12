@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './addBook.css';
 
 export function AddBook() {
   const [author, setAuthor] = useState('');
@@ -37,7 +38,7 @@ export function AddBook() {
         })
       });
       // eslint-disable-next-line no-unused-vars
-      const resJson = await res.json();
+      // const resJson = await res.json();
       if (res.status === 200) {
         setAuthor('');
         setTitle('');
@@ -50,7 +51,7 @@ export function AddBook() {
         setPrice(0);
         setRanking(0);
         setComplete(false);
-        setMessage('User created successfully');
+        setMessage('Book created successfully');
       } else {
         setMessage('Some error occured');
       }
@@ -60,8 +61,9 @@ export function AddBook() {
   };
 
   return (
-    <div className="Add-form">
-      <form onSubmit={handleSubmit}>
+    <div className="add-form">
+      <h3 className="add-form__title">Add New Book</h3>
+      <form onSubmit={handleSubmit} className="add-form__form">
         <input
           type="text"
           value={title}
@@ -77,7 +79,7 @@ export function AddBook() {
         <input
           type="text"
           value={company}
-          placeholder="Compañia"
+          placeholder="Editorial"
           onChange={(e) => setCompany(e.target.value)}
         />
         <input

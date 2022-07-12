@@ -15,10 +15,35 @@ export function Book({ book }) {
         {' '}
         {book.author}
       </h3>
-      <h3 className="book_author">{book.company}</h3>
-      <h3 className="book_author">{book.year}</h3>
-      <h3 className="book_author">{book.coection}</h3>
-      <h3 className="book_author">{book.ranking}</h3>
+      <h3 className="book_author">
+        Editorial:
+        {' '}
+        {book.company}
+      </h3>
+      <h3 className="book_author">
+        Año:
+        {' '}
+        {book.year}
+      </h3>
+      <h3 className="book_author">
+        Colección:
+        {' '}
+        {book.coection}
+      </h3>
+      <h3 className="book_author">
+        Ranking:
+        {' '}
+        {book.ranking}
+      </h3>
+      <h3 className="book_author">
+        {book.price}
+      </h3>
+      <h3 className="book_author">
+        Collection
+        {' '}
+        {book.complete ? 'complete' : 'incomplete'}
+      </h3>
+      <button type="button" className="book__delete-handler">Delete</button>
     </article>
   );
 }

@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Gallery library={library} />
       <AddBook />
+      <Gallery library={library} />
     </div>
   );
 }
