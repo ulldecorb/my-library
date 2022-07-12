@@ -9,11 +9,11 @@ function bookRouter() {
     .get(bookController.getAll)
     .post(bookController.createOne);
 
-  // routes
-  //   .route('/api/:bookID')
-  //   .delete(bookController.deleteById)
+  routes
+    .route('/api/:bookID')
+    .delete(bookController.deleteById)
   //   .get(bookController.getById)
-  //   .put(bookController.updateById);
+    .put(bookController.updateById);
 
   return routes;
 }
