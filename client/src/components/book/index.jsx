@@ -26,14 +26,14 @@ export function Book({ book, index }) {
 
   return (
     <li className="book">
-      <h2>{index + 1}</h2>
+      <h2 className="book__index">{index + 1}</h2>
       <h2 className="book__title">
         {book.title}
       </h2>
-      <h3 className="book_author">
+      <h3 className="book__author">
         {book.author}
       </h3>
-      <h3 className="book_author">
+      <h3 className="book__ranking">
         {book.ranking}
       </h3>
       {/* <h3 className="book_author">
@@ -59,7 +59,7 @@ export function Book({ book, index }) {
         {' '}
         {book.complete ? 'complete' : 'incomplete'}
       </h3> */}
-      <Link to="/update">Update</Link>
+      <Link className="book__update-link" to="/update">Update</Link>
       <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
     </li>
   );

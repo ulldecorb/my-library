@@ -1,6 +1,7 @@
 .navbar {
     height: 100px;
     width: 100vw;
+    background-color: rgb(111, 121, 179);
     color: red;
     position: fixed;
     top: 0;
@@ -10,4 +11,15 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    &__link {
+        color: white;
+        cursor: pointer;
+        text-shadow: 0 0 20px rgb(38, 36, 59);
+        // text-decoration: none;
+        
+        &:hover {
+            text-shadow: none;
+        }
+    }
 }

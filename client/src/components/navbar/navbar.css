@@ -1,6 +1,7 @@
 .navbar {
   height: 100px;
   width: 100vw;
+  background-color: #6f79b3;
   color: red;
   position: fixed;
   top: 0;
@@ -14,5 +15,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.navbar__link {
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 20px #26243b;
+}
+
+.navbar__link:hover {
+  text-shadow: none;
 }
 /*# sourceMappingURL=navbar.css.map */

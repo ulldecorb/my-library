@@ -1,12 +1,109 @@
+@import '../../style/mixins';
+
 .book {
     outline: 2px solid red;
-    width: 80vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style-type: decimal;
+    width: 100vw;
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr 1fr 2fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "index title author ranking update delete";
 
-    // &__title {
-    //     font-size: 1.5rem;
-    // }
+    &__index {
+        // width: 5vw;
+        outline: 2px solid red;
+        width: 100%;
+        height: 100%;
+        // text-align: left;
+        overflow: none;
+        grid-area: index;
+    }
+    
+    &__title {
+        // width: 30vw;
+        outline: 2px solid red;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        overflow: none;
+        grid-area: title;
+    }
+    
+    &__author {
+        // width: 30vw;
+        outline: 2px solid red;
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        grid-area: author;
+    }
+    
+    &__ranking {
+        // width: 5vw;
+        outline: 2px solid red;
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        grid-area: ranking;
+    }
+    
+    &__update-link {
+        // width: 5vw;
+        outline: 2px solid red;
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        @include center-text;
+        grid-area: update;
+    }
+    
+    &__delete-handler {
+        // width: 5vw;
+        outline: 2px solid red;
+        width: 100%;
+        height: 100%;
+        overflow: none;
+        grid-area: delete;
+    }
 }
+
+@media (max-width: 900px) {
+    .book {
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+          "index title title ranking ranking"
+          "index author author update delete";
+
+        &__index {
+            grid-area: index;
+            font-size: 3rem;
+        } 
+        
+        &__title {
+            grid-area: title;
+        }
+        
+        &__author {
+            grid-area: author;
+            text-align: left;
+        }
+        
+        &__ranking {
+            grid-area: ranking;
+        }
+        
+        &__update-link {
+            grid-area: update;
+        }
+        
+        &__delete-handler {
+            grid-area: delete;
+        }
+
+    }
+  }
