@@ -37,7 +37,7 @@ function App() {
             }
           />
           <Route
-            path="/update"
+            path="/update/:bookId"
             element={
               <Detail />
             }

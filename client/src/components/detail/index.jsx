@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 import './detail.css';
 
 export function Detail() {
+  const { bookId } = useParams();
+  const [book, setBook] = useState({ algo: 'sera' });
+  const [id, setId] = useState(bookId);
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [company, setCompany] = useState('');
@@ -9,17 +14,63 @@ export function Detail() {
   const [category, setCategory] = useState('');
   const [remark, setRemark] = useState('');
   const [review, setReview] = useState('');
-  const [year, setYear] = useState(null);
-  const [price, setPrice] = useState(null);
-  const [ranking, setRanking] = useState(null);
+  const [year, setYear] = useState(undefined);
+  const [price, setPrice] = useState(undefined);
+  const [ranking, setRanking] = useState(undefined);
   const [complete, setComplete] = useState(false);
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
+  console.log('bookId PARAM ::', bookId);
+
+  // const newBook = (bookObject) => {
+  //   // eslint-disable-next-line no-underscore-dangle
+  //   setId(bookId);
+  //   setAuthor(bookObject.author);
+  //   setTitle(bookObject.title);
+  //   setCompany(bookObject.company);
+  //   setColection(bookObject.colection);
+  //   setCategory(bookObject.category);
+  //   setRemark(bookObject.remark);
+  //   setReview(bookObject.review);
+  //   setYear(bookObject.year);
+  //   setPrice(bookObject.price);
+  //   setRanking(bookObject.ranking);
+  //   setComplete(bookObject.complete);
+
+  //   console.log('book on function:: ', book);
+  // };
+
+  const getBookById = async () => {
+    await fetch(`/api/${bookId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBook(data);
+        // eslint-disable-next-line no-underscore-dangle
+        setId(data._id);
+        setAuthor(data.author);
+        setTitle(data.title);
+        setCompany(data.company);
+        setColection(data.colection);
+        setCategory(data.category);
+        setRemark(data.remark);
+        setReview(data.review);
+        setYear(data.year);
+        setPrice(data.price);
+        setRanking(data.ranking);
+        setComplete(data.complete);
+      });
+  };
+
+  useEffect(() => {
+    getBookById();
+    console.log('book on useEffect:: ', book);
+  }, []);
+
+  const handleSubmitUpdate = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api', {
-        method: 'POST',
+      const res = await fetch(`/api/${bookId}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -51,7 +102,7 @@ export function Detail() {
         setPrice(0);
         setRanking(0);
         setComplete(false);
-        setMessage('Book created successfully');
+        setMessage('Book updated successfully');
       } else {
         setMessage('Some error occured');
       }
@@ -62,8 +113,8 @@ export function Detail() {
 
   return (
     <div className="add-form">
-      <h3 className="add-form__title">book._id</h3>
-      <form onSubmit={handleSubmit} className="add-form__form">
+      <h3 className="add-form__title">{id}</h3>
+      <form onSubmit={handleSubmitUpdate} className="add-form__form">
         <label htmlFor="title">
           Title:
           {' '}
@@ -209,12 +260,29 @@ export function Detail() {
           />
         </label>
 
-        <button type="submit">Create</button>
+        <button type="submit">Update</button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
     </div>
   );
 }
+
+// Detail.propTypes = {
+//   book: PropTypes.shape({
+//     _id: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     author: PropTypes.string.isRequired,
+//     company: PropTypes.string,
+//     colection: PropTypes.string,
+//     year: PropTypes.number,
+//     price: PropTypes.number,
+//     ranking: PropTypes.number,
+//     complete: PropTypes.bool,
+//     category: PropTypes.string,
+//     remark: PropTypes.string,
+//     review: PropTypes.string
+//   }).isRequired
+// };
 
 export default Detail;

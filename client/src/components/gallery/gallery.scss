@@ -1,11 +1,22 @@
 // @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 
 .gallery {
-    margin: 100px 0 20px 0;
-    width: 100vw;
+
+    // outline: 2px solid red;
+    margin: 100px 0 20px;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
     border: none;
+
+    li:nth-of-type(even) {
+        background-color: red;
+        color: rgb(235, 231, 231);
+
+        .book__index {
+            border-right: 2px solid black;
+        }
+    }
 } 

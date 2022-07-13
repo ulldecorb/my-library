@@ -12,7 +12,7 @@ function bookRouter() {
   routes
     .route('/api/:bookID')
     .delete(bookController.deleteById)
-  //   .get(bookController.getById)
+    .get(bookController.getById)
     .put(bookController.updateById);
 
   return routes;
