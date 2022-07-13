@@ -7,6 +7,7 @@ import {
 import { NavBar } from './components/navbar';
 import { Gallery } from './components/gallery';
 import { AddBook } from './components/addBook';
+import { UpdateBook } from './components/updateBook';
 import './App.css';
 
 function App() {
@@ -33,6 +34,12 @@ function App() {
             path="/addbook"
             element={
               <AddBook />
+            }
+          />
+          <Route
+            path="/update"
+            element={
+              <UpdateBook />
             }
           />
         </Routes>

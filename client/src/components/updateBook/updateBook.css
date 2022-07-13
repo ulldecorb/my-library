@@ -1,0 +1,28 @@
+.add-form {
+  margin-top: 100px;
+  outline: 2px solid red;
+  min-width: 400px;
+  width: 33vw;
+  padding: 2vmin;
+}
+
+.add-form__title {
+  font-size: 1.5rem;
+}
+
+.add-form__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=updateBook.css.map */
