@@ -12,7 +12,7 @@ const BookSchema = new mongoose.Schema({
   company: {
     type: String
   },
-  coection: {
+  colection: {
     type: String
   },
   year: {

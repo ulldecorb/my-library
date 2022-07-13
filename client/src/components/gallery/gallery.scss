@@ -1,9 +1,12 @@
+// @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
 .gallery {
-    margin: 100px 0;
+    margin: 100px 0 20px 0;
     width: 100vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    align-content: flex-start;
+    text-decoration: none;
+    border: none;
+
 } 

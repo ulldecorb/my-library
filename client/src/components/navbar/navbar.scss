@@ -1,10 +1,25 @@
-navbar {
+.navbar {
     height: 100px;
     width: 100vw;
-    color: white;
+    background-color: rgb(111, 121, 179);
+    color: red;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #aaa;
-    text-align: center;
+    outline: 5px solid #000;
+    // text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__link {
+        color: white;
+        cursor: pointer;
+        text-shadow: 0 0 20px rgb(38, 36, 59);
+        // text-decoration: none;
+        
+        &:hover {
+            text-shadow: none;
+        }
+    }
 }

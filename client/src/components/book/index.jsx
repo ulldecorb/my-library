@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './book.css';
-import { Link } from 'react-router-dom';
 
-export function Book({ book }) {
+export function Book({ book, index }) {
   const handleDeleteBook = async (e) => {
     e.preventDefault();
     try {
@@ -22,38 +22,34 @@ export function Book({ book }) {
       console.log(err);
     }
   };
+  console.log('item: ', index);
 
   return (
-    <article className="book">
+    <li className="book">
+      <h2 className="book__index">{index + 1}</h2>
       <h2 className="book__title">
-        Title:
-        {' '}
         {book.title}
       </h2>
-      <h3 className="book_author">
-        Author:
-        {' '}
+      <h3 className="book__author">
         {book.author}
       </h3>
-      <h3 className="book_author">
+      <h3 className="book__ranking">
+        {book.ranking}
+      </h3>
+      {/* <h3 className="book_author">
         Editorial:
         {' '}
         {book.company}
       </h3>
       <h3 className="book_author">
-        Año:
+        Year:
         {' '}
         {book.year}
       </h3>
       <h3 className="book_author">
-        Colección:
+        Collection:
         {' '}
-        {book.coection}
-      </h3>
-      <h3 className="book_author">
-        Ranking:
-        {' '}
-        {book.ranking}
+        {book.colection}
       </h3>
       <h3 className="book_author">
         {book.price}
@@ -62,10 +58,10 @@ export function Book({ book }) {
         Collection
         {' '}
         {book.complete ? 'complete' : 'incomplete'}
-      </h3>
+      </h3> */}
+      <Link className="book__update-link" to="/update">Update</Link>
       <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
-      <Link to="/update">Update</Link>
-    </article>
+    </li>
   );
 }
 
@@ -75,7 +71,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     company: PropTypes.string,
-    coection: PropTypes.string,
+    colection: PropTypes.string,
     year: PropTypes.number,
     price: PropTypes.number,
     ranking: PropTypes.number,
@@ -83,7 +79,8 @@ Book.propTypes = {
     category: PropTypes.string,
     remark: PropTypes.string,
     review: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default Book;

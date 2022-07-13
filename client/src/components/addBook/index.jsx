@@ -5,7 +5,7 @@ export function AddBook() {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [company, setCompany] = useState('');
-  const [coection, setCoection] = useState('');
+  const [colection, setColection] = useState('');
   const [category, setCategory] = useState('');
   const [remark, setRemark] = useState('');
   const [review, setReview] = useState('');
@@ -27,7 +27,7 @@ export function AddBook() {
           author,
           title,
           company,
-          coection,
+          colection,
           category,
           remark,
           review,
@@ -43,7 +43,7 @@ export function AddBook() {
         setAuthor('');
         setTitle('');
         setCompany('');
-        setCoection('');
+        setColection('');
         setCategory('');
         setRemark('');
         setReview('');
@@ -106,9 +106,9 @@ export function AddBook() {
           <input
             id="collection"
             type="text"
-            value={coection}
+            value={colection}
             placeholder="Colección"
-            onChange={(e) => setCoection(e.target.value)}
+            onChange={(e) => setColection(e.target.value)}
           />
         </label>
 

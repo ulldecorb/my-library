@@ -5,12 +5,12 @@ import './gallery.css';
 
 export function Gallery({ library }) {
   return (
-    <section className="gallery">
+    <ol className="gallery">
       {!library ? <h2>Loading...</h2>
-        : library.map((book) => (
-          <Book book={book} key={`gallery-${book.title}`} />
+        : library.map((book, index) => (
+          <Book book={book} index={index} key={`gallery-${book.title}`} />
         ))}
-    </section>
+    </ol>
   );
 }
 
@@ -20,7 +20,7 @@ Gallery.propTypes = {
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
       company: PropTypes.string,
-      coection: PropTypes.string,
+      colection: PropTypes.string,
       year: PropTypes.number,
       price: PropTypes.number,
       ranking: PropTypes.number,

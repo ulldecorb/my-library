@@ -1,8 +1,8 @@
 .add-form {
+  margin-top: 100px;
   outline: 2px solid red;
   min-width: 400px;
   width: 33vw;
-  margin: 3vw auto;
   padding: 2vmin;
 }
 

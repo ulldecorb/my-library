@@ -1,12 +1,129 @@
 .book {
   outline: 2px solid red;
-  min-width: 400px;
-  width: 33vw;
-  margin: 3vw 3vw;
-  padding: 2vmin;
+  width: 100vw;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr 4fr 1fr 2fr 2fr;
+      grid-template-columns: 1fr 4fr 4fr 1fr 2fr 2fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "index title author ranking update delete";
+}
+
+.book__index {
+  outline: 2px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: index;
 }
 
 .book__title {
-  font-size: 1.5rem;
+  outline: 2px solid red;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  overflow: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+}
+
+.book__author {
+  outline: 2px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: author;
+}
+
+.book__ranking {
+  outline: 2px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: ranking;
+}
+
+.book__update-link {
+  outline: 2px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: update;
+}
+
+.book__delete-handler {
+  outline: 2px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: delete;
+}
+
+@media (max-width: 900px) {
+  .book {
+    -ms-grid-columns: 1fr 2fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "index title title ranking ranking" "index author author update delete";
+  }
+  .book__index {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: index;
+    font-size: 3rem;
+  }
+  .book__title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: title;
+  }
+  .book__author {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: author;
+    text-align: left;
+  }
+  .book__ranking {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 2;
+    grid-area: ranking;
+  }
+  .book__update-link {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: update;
+  }
+  .book__delete-handler {
+    -ms-grid-row: 2;
+    -ms-grid-column: 5;
+    grid-area: delete;
+  }
 }
 /*# sourceMappingURL=book.css.map */
