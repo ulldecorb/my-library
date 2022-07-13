@@ -36,6 +36,7 @@ export function Book({ book, index }) {
       <h3 className="book__ranking">
         {book.ranking}
       </h3>
+      {/* Resta de posibles columnes a mostrar */}
       {/* <h3 className="book_author">
         Editorial:
         {' '}
