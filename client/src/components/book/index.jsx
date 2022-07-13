@@ -23,7 +23,7 @@ export function Book({ book, index }) {
         console.log(book._id);
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
