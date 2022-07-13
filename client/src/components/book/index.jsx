@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Detail } from '../detail';
 import './book.css';
 
 export function Book({ book, index }) {
@@ -60,7 +61,8 @@ export function Book({ book, index }) {
         {' '}
         {book.complete ? 'complete' : 'incomplete'}
       </h3> */}
-      <Link className="book__update-link" to="/update">Update</Link>
+      {/* <Link className="book__update-link" to="/update">Update</Link> */}
+      <Detail book={book} />
       <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
     </li>
   );

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './detail.css';
 
-export function Detail() {
+export function Detail({ book }) {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [company, setCompany] = useState('');
@@ -14,6 +15,20 @@ export function Detail() {
   const [ranking, setRanking] = useState(null);
   const [complete, setComplete] = useState(false);
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    setAuthor(book.author);
+    setTitle(book.title);
+    setCompany(book.company);
+    setColection(book.colection);
+    setCategory(book.category);
+    setRemark(book.remark);
+    setReview(book.review);
+    setYear(book.year);
+    setPrice(book.price);
+    setRanking(book.ranking);
+    setComplete(book.complete);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -216,5 +231,22 @@ export function Detail() {
     </div>
   );
 }
+
+Detail.propTypes = {
+  book: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    company: PropTypes.string,
+    colection: PropTypes.string,
+    year: PropTypes.number,
+    price: PropTypes.number,
+    ranking: PropTypes.number,
+    complete: PropTypes.bool,
+    category: PropTypes.string,
+    remark: PropTypes.string,
+    review: PropTypes.string
+  }).isRequired
+};
 
 export default Detail;
