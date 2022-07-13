@@ -1,6 +1,6 @@
 .gallery {
-  margin: 100px 0 20px 0;
-  width: 100vw;
+  margin: 100px 0 20px;
+  width: 70vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,5 +13,14 @@
           align-items: center;
   text-decoration: none;
   border: none;
+}
+
+.gallery li:nth-of-type(even) {
+  background-color: red;
+  color: #ebe7e7;
+}
+
+.gallery li:nth-of-type(even) .book__index {
+  border-right: 2px solid black;
 }
 /*# sourceMappingURL=gallery.css.map */

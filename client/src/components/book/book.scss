@@ -1,7 +1,8 @@
 @import '../../style/mixins';
 
 .book {
-    outline: 2px solid red;
+    // outline: 2px solid red;
+    background-color: rgb(235, 231, 231);
     width: 100vw;
     // display: flex;
     // justify-content: flex-start;
@@ -15,17 +16,19 @@
 
     &__index {
         // width: 5vw;
-        outline: 2px solid red;
+        // outline: 2px solid red;
         width: 100%;
         height: 100%;
         // text-align: left;
         overflow: none;
         grid-area: index;
+        border-right: 8px solid red;
     }
     
     &__title {
         // width: 30vw;
-        outline: 2px solid red;
+        // outline: 2px solid red;
+        padding-left: 10px;
         width: 100%;
         height: 100%;
         text-align: left;
@@ -35,7 +38,8 @@
     
     &__author {
         // width: 30vw;
-        outline: 2px solid red;
+        // outline: 2px solid red;
+        padding-left: 10px;
         width: 100%;
         height: 100%;
         overflow: none;
@@ -45,7 +49,7 @@
     
     &__ranking {
         // width: 5vw;
-        outline: 2px solid red;
+        // outline: 2px solid red;
         width: 100%;
         height: 100%;
         overflow: none;
@@ -54,7 +58,7 @@
     
     &__update-link {
         // width: 5vw;
-        outline: 2px solid red;
+        // outline: 2px solid red;
         width: 100%;
         height: 100%;
         overflow: none;
@@ -64,7 +68,7 @@
     
     &__delete-handler {
         // width: 5vw;
-        outline: 2px solid red;
+        // outline: 2px solid red;
         width: 100%;
         height: 100%;
         overflow: none;
