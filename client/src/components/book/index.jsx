@@ -1,10 +1,13 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Detail } from '../detail';
+// import { Detail } from '../detail';
 import './book.css';
 
 export function Book({ book, index }) {
+  // eslint-disable-next-line no-underscore-dangle
+  const id = book._id;
+
   const handleDeleteBook = async (e) => {
     e.preventDefault();
     try {
@@ -23,7 +26,6 @@ export function Book({ book, index }) {
       console.log(err);
     }
   };
-  console.log('item: ', index);
 
   return (
     <li className="book">
@@ -61,8 +63,8 @@ export function Book({ book, index }) {
         {' '}
         {book.complete ? 'complete' : 'incomplete'}
       </h3> */}
-      {/* <Link className="book__update-link" to="/update">Update</Link> */}
-      <Detail book={book} />
+      <Link className="book__update-link" to={`/update/${id}`}>Update</Link>
+      {/* <Detail book={book} /> */}
       <button onClick={handleDeleteBook} type="button" className="book__delete-handler">Delete</button>
     </li>
   );

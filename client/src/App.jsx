@@ -7,7 +7,7 @@ import {
 import { NavBar } from './components/navbar';
 import { Gallery } from './components/gallery';
 import { AddBook } from './components/addBook';
-// import { Detail } from './components/detail';
+import { Detail } from './components/detail';
 import './App.css';
 
 function App() {
@@ -36,12 +36,12 @@ function App() {
               <AddBook />
             }
           />
-          {/* <Route
-            path="/update"
+          <Route
+            path="/update/:bookId"
             element={
               <Detail />
             }
-          /> */}
+          />
         </Routes>
       </div>
     </Router>
