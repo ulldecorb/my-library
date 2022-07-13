@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './updateBook.css';
+import './detail.css';
 
-export function UpdateBook() {
+export function Detail() {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [company, setCompany] = useState('');
@@ -62,7 +62,7 @@ export function UpdateBook() {
 
   return (
     <div className="add-form">
-      <h3 className="add-form__title">Update Book</h3>
+      <h3 className="add-form__title">book._id</h3>
       <form onSubmit={handleSubmit} className="add-form__form">
         <label htmlFor="title">
           Title:
@@ -217,4 +217,4 @@ export function UpdateBook() {
   );
 }
 
-export default UpdateBook;
+export default Detail;

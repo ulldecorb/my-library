@@ -7,7 +7,7 @@ import {
 import { NavBar } from './components/navbar';
 import { Gallery } from './components/gallery';
 import { AddBook } from './components/addBook';
-import { UpdateBook } from './components/updateBook';
+import { Detail } from './components/detail';
 import './App.css';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           <Route
             path="/update"
             element={
-              <UpdateBook />
+              <Detail />
             }
           />
         </Routes>
