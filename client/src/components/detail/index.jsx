@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './detail.css';
 
 export function Detail({ book }) {
+  const [id, setId] = useState('');
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [company, setCompany] = useState('');
@@ -17,6 +18,8 @@ export function Detail({ book }) {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
+    // eslint-disable-next-line no-underscore-dangle
+    setId(book._id);
     setAuthor(book.author);
     setTitle(book.title);
     setCompany(book.company);
@@ -30,11 +33,11 @@ export function Detail({ book }) {
     setComplete(book.complete);
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmitUpdate = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api', {
-        method: 'POST',
+      const res = await fetch(`/api/${id}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -66,7 +69,7 @@ export function Detail({ book }) {
         setPrice(0);
         setRanking(0);
         setComplete(false);
-        setMessage('Book created successfully');
+        setMessage('Book updated successfully');
       } else {
         setMessage('Some error occured');
       }
@@ -77,8 +80,8 @@ export function Detail({ book }) {
 
   return (
     <div className="add-form">
-      <h3 className="add-form__title">book._id</h3>
-      <form onSubmit={handleSubmit} className="add-form__form">
+      <h3 className="add-form__title">{id}</h3>
+      <form onSubmit={handleSubmitUpdate} className="add-form__form">
         <label htmlFor="title">
           Title:
           {' '}
@@ -224,7 +227,7 @@ export function Detail({ book }) {
           />
         </label>
 
-        <button type="submit">Create</button>
+        <button type="submit">Update</button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
