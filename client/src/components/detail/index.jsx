@@ -113,10 +113,10 @@ export function Detail() {
             <>
               <h3 className="add-form__title">{id}</h3>
               <form onSubmit={handleAddBook} className="add-form__form">
-                <label htmlFor="title">
-                  Title:
-                  {' '}
+                <label htmlFor="title" className="add-form__label">
+                  <p className="add-form__label-text">Title:</p>
                   <input
+                    className="add-form__input"
                     id="title"
                     type="text"
                     value={title}
@@ -125,10 +125,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="author">
-                  Author:
-                  {' '}
+                <label htmlFor="author" className="add-form__label">
+                  <p className="add-form__label-text">Author:</p>
                   <input
+                    className="add-form__input"
                     id="author"
                     type="text"
                     value={author}
@@ -137,10 +137,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="company">
-                  Editorial:
-                  {' '}
+                <label htmlFor="company" className="add-form__label">
+                  <p className="add-form__label-text">Editorial:</p>
                   <input
+                    className="add-form__input"
                     id="company"
                     type="text"
                     value={company}
@@ -149,10 +149,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="collection">
-                  Collection:
-                  {' '}
+                <label htmlFor="collection" className="add-form__label">
+                  <p className="add-form__label-text">Collection:</p>
                   <input
+                    className="add-form__input"
                     id="collection"
                     type="text"
                     value={colection}
@@ -161,10 +161,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="category">
-                  Category:
-                  {' '}
+                <label htmlFor="category" className="add-form__label">
+                  <p className="add-form__label-text">Category:</p>
                   {/* <input
+                  className="add-form__input"
             id="category"
             type="text"
             value={category}
@@ -180,10 +180,10 @@ export function Detail() {
                   </select>
                 </label>
 
-                <label htmlFor="year">
-                  Year:
-                  {' '}
+                <label htmlFor="year" className="add-form__label">
+                  <p className="add-form__label-text">Year:</p>
                   <input
+                    className="add-form__input"
                     id="year"
                     type="number"
                     value={year}
@@ -192,10 +192,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="price">
-                  Price:
-                  {' '}
+                <label htmlFor="price" className="add-form__label">
+                  <p className="add-form__label-text">Price:</p>
                   <input
+                    className="add-form__input"
                     id="price"
                     type="number"
                     value={price}
@@ -204,24 +204,24 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="ranking">
-                  Ranking:
-                  {' '}
+                <label htmlFor="ranking" className="add-form__label">
+                  <p className="add-form__label-text">Ranking:</p>
                   <input
+                    className="add-form__input"
                     id="ranking"
                     type="number"
                     value={ranking}
-                    min="0"
-                    max="5"
-                    placeholder="ranking"
+            // min="0"
+            // max="5"
+                    placeholder="Ranking"
                     onChange={(e) => setRanking(e.target.value)}
                   />
                 </label>
 
-                <label htmlFor="complete">
-                  Completed:
-                  {' '}
+                <label htmlFor="complete" className="add-form__label">
+                  <p className="add-form__label-text">Completed:</p>
                   <input
+                    className="add-form__input"
                     id="complete"
                     type="checkbox"
                     value={complete}
@@ -229,10 +229,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="remark">
-                  Remark:
-                  {' '}
+                <label htmlFor="remark" className="add-form__label">
+                  <p className="add-form__label-text">Remark:</p>
                   {/* <input
+                  className="add-form__input"
             id="remark"
             type="text"
             value={remark}
@@ -240,6 +240,7 @@ export function Detail() {
             onChange={(e) => setRemark(e.target.value)}
           /> */}
                   <textarea
+                    className="add-form__input input__textarea"
                     id="remark"
                     value={remark}
                     placeholder="Comentarios"
@@ -247,10 +248,10 @@ export function Detail() {
                   />
                 </label>
 
-                <label htmlFor="review">
-                  Review:
-                  {' '}
+                <label htmlFor="review" className="add-form__label">
+                  <p className="add-form__label-text">Review:</p>
                   <textarea
+                    className="add-form__input input__textarea"
                     id="review"
                     value={review}
                     placeholder="Reseña"
@@ -258,9 +259,9 @@ export function Detail() {
                   />
                 </label>
 
-                <button type="submit">Update</button>
+                <button type="submit" className="add-form__handler">Update</button>
 
-                <button onClick={handleDeleteBook} type="button" className="detail__delete-handler">Delete</button>
+                <button onClick={handleDeleteBook} type="button" className="add-form__handler">Delete</button>
               </form>
               <div className="message">{message ? <p>{message}</p> : null}</div>
             </>

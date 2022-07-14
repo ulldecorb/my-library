@@ -1,3 +1,5 @@
+@import '../../style/fonts';
+
 .add-form {
     margin-top: 100px;
     outline: 2px solid red;
@@ -14,5 +16,40 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        
+    }
+    
+    &__label {
+        margin: 1vh 0 0 0;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;      
+
+        .input__textarea:only-of-type {
+            text-align: left;
+            font-family: 'Inconsolata', monospace;
+        } 
+    }
+
+    &__label-text {
+        text-align: right;
+        padding-right: 5px;
+        font-family: 'Fira Mono', monospace;
+    }
+
+    &__input {
+        text-align: center;
+        width: 100%;
+
+    }
+
+    &__handler{
+        text-align: center;
+        width: 100%;
+        background-color: red;
+        font-family: 'Fira Mono', monospace;
+        border-radius: 10px;
+        height: 30px;
+        
     }
 }
