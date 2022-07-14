@@ -1,4 +1,4 @@
-@import '../../style/mixins';
+@import '../../style/mixins', '../../style/fonts';
 
 .book {
     // outline: 2px solid red;
@@ -9,10 +9,10 @@
     // align-items: center;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 4fr 4fr 1fr 2fr 2fr;
+    grid-template-columns: 1fr 4fr 4fr 1fr 2fr;
     grid-template-rows: auto;
     grid-template-areas: 
-      "index title author ranking update delete";
+      "index title author ranking update";
 
     &__index {
         // width: 5vw;
@@ -66,14 +66,14 @@
         grid-area: update;
     }
     
-    &__delete-handler {
-        // width: 5vw;
-        // outline: 2px solid red;
-        width: 100%;
-        height: 100%;
-        overflow: none;
-        grid-area: delete;
-    }
+    // &__delete-handler {
+    //     // width: 5vw;
+    //     // outline: 2px solid red;
+    //     width: 100%;
+    //     height: 100%;
+    //     overflow: none;
+    //     grid-area: delete;
+    // }
 }
 
 @media (max-width: 900px) {
@@ -82,7 +82,7 @@
         grid-template-rows: auto;
         grid-template-areas: 
           "index title title ranking ranking"
-          "index author author update delete";
+          "index author author update update";
 
         &__index {
             grid-area: index;
@@ -106,9 +106,9 @@
             grid-area: update;
         }
         
-        &__delete-handler {
-            grid-area: delete;
-        }
+        // &__delete-handler {
+        //     grid-area: delete;
+        // }
 
     }
   }
