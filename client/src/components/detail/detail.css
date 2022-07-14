@@ -1,4 +1,4 @@
-.add-form {
+.book-form {
   margin-top: 100px;
   outline: 2px solid red;
   min-width: 400px;
@@ -6,12 +6,12 @@
   padding: 2vmin;
 }
 
-.add-form__title {
+.book-form__title {
   font-size: 1.5rem;
   margin: 2vh 0;
 }
 
-.add-form__form {
+.book-form__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,7 +27,7 @@
           align-items: center;
 }
 
-.add-form__label {
+.book-form__label {
   margin: 1vh 0 0 0;
   display: -ms-grid;
   display: grid;
@@ -37,23 +37,23 @@
       grid-template-rows: auto;
 }
 
-.add-form__label .input__textarea:only-of-type {
+.book-form__label .input__textarea:only-of-type {
   text-align: left;
   font-family: 'Inconsolata', monospace;
 }
 
-.add-form__label-text {
+.book-form__label-text {
   text-align: right;
   padding-right: 5px;
   font-family: 'Fira Mono', monospace;
 }
 
-.add-form__input {
+.book-form__input {
   text-align: center;
   width: 100%;
 }
 
-.add-form__handler-box {
+.book-form__handler-box {
   width: 100%;
   height: 30px;
   margin-top: 5vh;
@@ -67,7 +67,7 @@
           align-items: center;
 }
 
-.add-form__handler {
+.book-form__handler {
   text-align: center;
   width: 100%;
   background-color: #d6caca;
@@ -78,17 +78,17 @@
   cursor: pointer;
 }
 
-.add-form__handler:hover {
+.book-form__handler:hover {
   background-color: #409135;
   color: #f8f66c;
 }
 
-.add-form__handler:nth-of-type(2) {
+.book-form__handler:nth-of-type(2) {
   background-color: #ff8989;
   color: #fff;
 }
 
-.add-form__handler:nth-of-type(2):hover {
+.book-form__handler:nth-of-type(2):hover {
   background-color: #a30000;
   color: #e4dc73;
 }

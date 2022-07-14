@@ -61,12 +61,13 @@ export function AddBook() {
   };
 
   return (
-    <div className="add-form">
-      <h3 className="add-form__title">Add New Book</h3>
-      <form onSubmit={handleSubmit} className="add-form__form">
-        <label htmlFor="title" className="add-form__label">
-          <p className="add-form__label-text">Title:</p>
+    <div className="book-form">
+      <h3 className="book-form__title">Add New Book</h3>
+      <form onSubmit={handleSubmit} className="book-form__form">
+        <label htmlFor="title" className="book-form__label">
+          <p className="book-form__label-text">Title:</p>
           <input
+            className="book-form__input"
             id="title"
             type="text"
             value={title}
@@ -75,9 +76,10 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="author" className="add-form__label">
-          <p className="add-form__label-text">Author:</p>
+        <label htmlFor="author" className="book-form__label">
+          <p className="book-form__label-text">Author:</p>
           <input
+            className="book-form__input"
             id="author"
             type="text"
             value={author}
@@ -86,9 +88,10 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="company" className="add-form__label">
-          <p className="add-form__label-text">Editorial:</p>
+        <label htmlFor="company" className="book-form__label">
+          <p className="book-form__label-text">Editorial:</p>
           <input
+            className="book-form__input"
             id="company"
             type="text"
             value={company}
@@ -97,9 +100,10 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="collection" className="add-form__label">
-          <p className="add-form__label-text">Collection:</p>
+        <label htmlFor="collection" className="book-form__label">
+          <p className="book-form__label-text">Collection:</p>
           <input
+            className="book-form__input"
             id="collection"
             type="text"
             value={colection}
@@ -108,9 +112,10 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="category" className="add-form__label">
-          <p className="add-form__label-text">Category:</p>
+        <label htmlFor="category" className="book-form__label">
+          <p className="book-form__label-text">Category:</p>
           {/* <input
+                    className="book-form__input"
             id="category"
             type="text"
             value={category}
@@ -126,9 +131,10 @@ export function AddBook() {
           </select>
         </label>
 
-        <label htmlFor="year" className="add-form__label">
-          <p className="add-form__label-text">Year:</p>
+        <label htmlFor="year" className="book-form__label">
+          <p className="book-form__label-text">Year:</p>
           <input
+            className="book-form__input"
             id="year"
             type="number"
             value={year}
@@ -137,20 +143,22 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="price" className="add-form__label">
-          <p className="add-form__label-text">Price:</p>
+        <label htmlFor="price" className="book-form__label">
+          <p className="book-form__label-text">Price:</p>
           <input
+            className="book-form__input"
             id="price"
             type="number"
             value={price}
-            placeholder="Reseña"
+            placeholder="Precio"
             onChange={(e) => setPrice(e.target.value)}
           />
         </label>
 
-        <label htmlFor="ranking" className="add-form__label">
-          <p className="add-form__label-text">Ranking:</p>
+        <label htmlFor="ranking" className="book-form__label">
+          <p className="book-form__label-text">Ranking:</p>
           <input
+            className="book-form__input"
             id="ranking"
             type="number"
             value={ranking}
@@ -161,9 +169,10 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="complete" className="add-form__label">
-          <p className="add-form__label-text">Completed:</p>
+        <label htmlFor="complete" className="book-form__label">
+          <p className="book-form__label-text">Completed:</p>
           <input
+            className="book-form__input"
             id="complete"
             type="checkbox"
             value={complete}
@@ -171,9 +180,10 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="remark" className="add-form__label">
-          <p className="add-form__label-text">Remark:</p>
+        <label htmlFor="remark" className="book-form__label">
+          <p className="book-form__label-text">Remark:</p>
           {/* <input
+                    className="book-form__input"
             id="remark"
             type="text"
             value={remark}
@@ -182,24 +192,28 @@ export function AddBook() {
           /> */}
           <textarea
             id="remark"
+            className="book-form__input input__textarea"
             value={remark}
             placeholder="Comentarios"
             onChange={(e) => setRemark(e.target.value)}
           />
         </label>
 
-        <label htmlFor="review" className="add-form__label">
-          <p className="add-form__label-text">Review:</p>
+        <label htmlFor="review" className="book-form__label">
+          <p className="book-form__label-text">Review:</p>
           <textarea
+            className="book-form__input input__textarea"
             id="review"
             value={review}
             placeholder="Reseña"
             onChange={(e) => setReview(e.target.value)}
           />
         </label>
+        <nav className="book-form__handler-box">
 
-        <button type="submit">Create</button>
+          <button type="submit" className="book-form__handler">Create</button>
 
+        </nav>
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
     </div>
