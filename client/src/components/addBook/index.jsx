@@ -9,9 +9,9 @@ export function AddBook() {
   const [category, setCategory] = useState('');
   const [remark, setRemark] = useState('');
   const [review, setReview] = useState('');
-  const [year, setYear] = useState(null);
-  const [price, setPrice] = useState(null);
-  const [ranking, setRanking] = useState(null);
+  const [year, setYear] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [ranking, setRanking] = useState(0);
   const [complete, setComplete] = useState(false);
   const [message, setMessage] = useState('');
 
