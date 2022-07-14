@@ -12,12 +12,19 @@ import './App.css';
 
 function App() {
   const [library, setLibrary] = useState(null);
-
-  useEffect(() => {
+  const getLibrary = () => {
     fetch('/api')
       .then((res) => res.json())
       .then((data) => setLibrary(data));
+  };
+
+  useEffect(() => {
+    getLibrary();
   }, []);
+
+  useEffect(() => {
+    getLibrary();
+  });
 
   return (
     <Router>
