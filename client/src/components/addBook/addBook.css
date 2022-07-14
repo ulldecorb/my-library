@@ -25,4 +25,13 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.add-form__label {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
 /*# sourceMappingURL=addBook.css.map */

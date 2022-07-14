@@ -64,9 +64,8 @@ export function AddBook() {
     <div className="add-form">
       <h3 className="add-form__title">Add New Book</h3>
       <form onSubmit={handleSubmit} className="add-form__form">
-        <label htmlFor="title">
-          Title:
-          {' '}
+        <label htmlFor="title" className="add-form__label">
+          <p className="add-form__label-text">Title:</p>
           <input
             id="title"
             type="text"
@@ -76,9 +75,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="author">
-          Author:
-          {' '}
+        <label htmlFor="author" className="add-form__label">
+          <p className="add-form__label-text">Author:</p>
           <input
             id="author"
             type="text"
@@ -88,9 +86,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="company">
-          Editorial:
-          {' '}
+        <label htmlFor="company" className="add-form__label">
+          <p className="add-form__label-text">Editorial:</p>
           <input
             id="company"
             type="text"
@@ -100,9 +97,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="collection">
-          Collection:
-          {' '}
+        <label htmlFor="collection" className="add-form__label">
+          <p className="add-form__label-text">Collection:</p>
           <input
             id="collection"
             type="text"
@@ -112,9 +108,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="category">
-          Category:
-          {' '}
+        <label htmlFor="category" className="add-form__label">
+          <p className="add-form__label-text">Category:</p>
           {/* <input
             id="category"
             type="text"
@@ -131,9 +126,8 @@ export function AddBook() {
           </select>
         </label>
 
-        <label htmlFor="year">
-          Year:
-          {' '}
+        <label htmlFor="year" className="add-form__label">
+          <p className="add-form__label-text">Year:</p>
           <input
             id="year"
             type="number"
@@ -143,9 +137,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="price">
-          Price:
-          {' '}
+        <label htmlFor="price" className="add-form__label">
+          <p className="add-form__label-text">Price:</p>
           <input
             id="price"
             type="number"
@@ -155,23 +148,21 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="ranking">
-          Ranking:
-          {' '}
+        <label htmlFor="ranking" className="add-form__label">
+          <p className="add-form__label-text">Ranking:</p>
           <input
             id="ranking"
             type="number"
             value={ranking}
-            min="0"
-            max="5"
-            placeholder="ranking"
+            // min="0"
+            // max="5"
+            placeholder="Ranking"
             onChange={(e) => setRanking(e.target.value)}
           />
         </label>
 
-        <label htmlFor="complete">
-          Completed:
-          {' '}
+        <label htmlFor="complete" className="add-form__label">
+          <p className="add-form__label-text">Completed:</p>
           <input
             id="complete"
             type="checkbox"
@@ -180,9 +171,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="remark">
-          Remark:
-          {' '}
+        <label htmlFor="remark" className="add-form__label">
+          <p className="add-form__label-text">Remark:</p>
           {/* <input
             id="remark"
             type="text"
@@ -198,9 +188,8 @@ export function AddBook() {
           />
         </label>
 
-        <label htmlFor="review">
-          Review:
-          {' '}
+        <label htmlFor="review" className="add-form__label">
+          <p className="add-form__label-text">Review:</p>
           <textarea
             id="review"
             value={review}

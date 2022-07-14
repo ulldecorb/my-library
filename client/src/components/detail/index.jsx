@@ -25,7 +25,7 @@ export function Detail() {
       .then((data) => {
         // setBook(data);
         // eslint-disable-next-line no-underscore-dangle
-        setId(data._id);
+        setId(bookId);
         setAuthor(data.author);
         setTitle(data.title);
         setCompany(data.company);
@@ -44,7 +44,24 @@ export function Detail() {
     getBookById();
   }, []);
 
-  const handleSubmitUpdate = async (e) => {
+  const handleDeleteBook = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`/api/${id}`, {
+        method: 'DELETE'
+      });
+      if (res.status === 200 || 204) {
+        setMessage('Delete succesfully');
+      } else {
+        console.log('res.status:: ', res.status);
+        setMessage('Delete failed');
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleAddBook = async (e) => {
     e.preventDefault();
     try {
       const res = await fetch(`/api/${bookId}`, {
@@ -95,7 +112,7 @@ export function Detail() {
           : (
             <>
               <h3 className="add-form__title">{id}</h3>
-              <form onSubmit={handleSubmitUpdate} className="add-form__form">
+              <form onSubmit={handleAddBook} className="add-form__form">
                 <label htmlFor="title">
                   Title:
                   {' '}
@@ -243,8 +260,9 @@ export function Detail() {
 
                 <button type="submit">Update</button>
 
-                <div className="message">{message ? <p>{message}</p> : null}</div>
+                <button onClick={handleDeleteBook} type="button" className="detail__delete-handler">Delete</button>
               </form>
+              <div className="message">{message ? <p>{message}</p> : null}</div>
             </>
           )
       }
