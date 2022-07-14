@@ -111,7 +111,7 @@ export function Detail() {
           ? (<h3 className="add-form__title">Loading...</h3>)
           : (
             <>
-              <h3 className="add-form__title">{id}</h3>
+              <h3 className="add-form__title">Update book</h3>
               <form onSubmit={handleAddBook} className="add-form__form">
                 <label htmlFor="title" className="add-form__label">
                   <p className="add-form__label-text">Title:</p>
@@ -258,10 +258,12 @@ export function Detail() {
                     onChange={(e) => setReview(e.target.value)}
                   />
                 </label>
+                <nav className="add-form__handler-box">
 
-                <button type="submit" className="add-form__handler">Update</button>
+                  <button type="submit" className="add-form__handler">Update</button>
+                  <button onClick={handleDeleteBook} type="button" className="add-form__handler">Delete</button>
 
-                <button onClick={handleDeleteBook} type="button" className="add-form__handler">Delete</button>
+                </nav>
               </form>
               <div className="message">{message ? <p>{message}</p> : null}</div>
             </>
