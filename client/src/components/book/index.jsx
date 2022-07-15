@@ -8,25 +8,6 @@ export function Book({ book, index }) {
   // eslint-disable-next-line no-underscore-dangle
   const id = book._id;
 
-  // const handleDeleteBook = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     // eslint-disable-next-line no-underscore-dangle
-  //     const res = await fetch(`/api/${book._id}`, {
-  //       method: 'DELETE'
-  //     });
-  //     if (res.status === 200) {
-  //       console.log('Delete succesfully');
-  //     } else {
-  //       console.log('Delete failed');
-  //       // eslint-disable-next-line no-underscore-dangle
-  //       console.log(book._id);
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
   return (
     <li className="book">
       <h2 className="book__index">{index + 1}</h2>
